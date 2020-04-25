@@ -1,0 +1,10 @@
+{
+  "name": "svg-tools",
+  "version": "1.0.0",
+  "scripts": {
+    "svgo": "svgo -i src/svg -o dest/svg --disable=removeViewBox --enable=removeXMLNS"
+  },
+  "dependencies": {
+    "svgo": "^1.3.2"
+  }
+}
