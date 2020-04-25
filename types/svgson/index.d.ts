@@ -1,11 +1,11 @@
 declare module "svgson" {
-  export interface IParsed {
+  export interface IPathParsed {
     name: string,
     type: string,
     value: string,
     attributes: Record<string, string>,
-    children: IParsed[]
+    children: IPathParsed[]
   }
 
-  function parse(content: string): Promise<IParsed>;
+  function parse(content: string): Promise<IPathParsed>;
 }

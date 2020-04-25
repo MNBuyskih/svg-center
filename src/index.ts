@@ -3,7 +3,7 @@
 import {promises as fs} from "fs";
 import * as path from "path";
 import svgpath from "svgpath";
-import {IParsed, parse} from "svgson";
+import {IPathParsed, parse} from "svgson";
 import {pathProperties, Properties} from "./pathProperties";
 
 main();
@@ -65,11 +65,11 @@ async function main(): Promise<void> {
   }));
 }
 
-async function toObject(svg: string): Promise<IParsed> {
+async function toObject(svg: string): Promise<IPathParsed> {
   return await parse(svg);
 }
 
-function getViewport(svgObject: IParsed): IViewBox | undefined {
+function getViewport(svgObject: IPathParsed): IViewBox | undefined {
   const viewBox = svgObject.attributes.viewBox;
   if (!svgObject.attributes.viewBox) {
     console.log(svgObject.attributes);
@@ -92,7 +92,7 @@ interface IFileInfo {
   filePath: string;
   fileName: string;
   fileContent: string;
-  svgObject: IParsed;
+  svgObject: IPathParsed;
   d?: string;
   pathParsed?: Properties;
   viewBox?: IViewBox;
@@ -106,9 +106,8 @@ async function getFiles(): Promise<IFileInfo[]> {
     const filePath = path.resolve(src, fileName);
     const fileContent = (await fs.readFile(filePath)).toString();
     const svgObject = await toObject(fileContent);
-    const d = svgObject.children.find((c: any) => c.name === "path")?.attributes?.d;
-    // @ts-ignore
-    const pathParsed: Properties | undefined = d && pathProperties(d) as Properties;
+    const d = svgObject.children.find((c: any) => c.name === "path")?.attributes.d;
+    const pathParsed: Properties | undefined = d ? pathProperties(d) as Properties : undefined;
     const viewBox = getViewport(svgObject);
 
     return {filePath, fileName, fileContent, svgObject, pathParsed, viewBox, d};
