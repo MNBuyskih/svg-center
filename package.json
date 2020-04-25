@@ -2,8 +2,8 @@
   "name": "svg-tools",
   "version": "1.0.0",
   "scripts": {
-    "svgo": "svgo -f src/svg --output=dest/svg --disable=removeViewBox --enable=removeAttr:fill",
-    "start": "ts-node -P ./tsconfig.json src/index.ts"
+    "svgo": "svgo -f src2/svg --output=dest/svg --disable=removeViewBox --enable=removeAttr:fill",
+    "start": "ts-node -P ./tsconfig.json src2/index.ts"
   },
   "dependencies": {
     "@types/node": "^13.13.2",
