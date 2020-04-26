@@ -3,15 +3,13 @@
     "target": "ES5",
     "module": "CommonJS",
     "lib": ["es6", "es2015"],
-    "outDir": "lib",
+    "outDir": "dest",
     "rootDir": "src",
     "strict": true,
     "types": ["node", "mocha"],
-    "typeRoots": ["./node_modules/@types",
-      "./src/types"
-    ],
     "esModuleInterop": true,
     "alwaysStrict": false,
     "noImplicitUseStrict": true
-  }
+  },
+  "files": ["src/lib/index.ts"]
 }

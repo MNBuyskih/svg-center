@@ -3,5 +3,6 @@
 /yarn-error.log
 /.idea/
 .DS_Store
-/test/svg/dist/*
-!/test/svg/dist/.gitkeep
+
+/src/test/svg/dist/*
+!/src/test/svg/dist/.gitkeep

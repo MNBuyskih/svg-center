@@ -2,17 +2,12 @@
   "name": "svg-tools",
   "version": "1.0.0",
   "scripts": {
-    "svgo": "svgo -f test/svg --output=dest/svg --disable=removeViewBox --enable=removeAttr:fill",
-    "test": "ts-node -P ./tsconfig.json test/index.ts"
+    "build": "tsc -p .",
+    "build:w": "yarn build -w",
+    "test": "ts-node -P ./tsconfig.json src/test/index.ts"
   },
   "dependencies": {
-    "@types/chai": "^4.2.11",
-    "@types/mocha": "^7.0.2",
     "@types/node": "^13.13.2",
-    "@types/sinon": "^9.0.0",
-    "chai": "^4.2.0",
-    "mocha": "^7.1.1",
-    "sinon": "^9.0.2",
     "svg-path-properties": "^1.0.4",
     "svgpath": "^2.2.3",
     "svgson": "https://github.com/MNBuyskih/svgson.git#add-types",
