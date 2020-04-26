@@ -15,7 +15,7 @@
     "sinon": "^9.0.2",
     "svg-path-properties": "^1.0.4",
     "svgpath": "^2.2.3",
-    "svgson": "^4.0.0",
+    "svgson": "https://github.com/MNBuyskih/svgson.git#add-types",
     "ts-node": "^8.9.0",
     "typescript": "^3.8.3"
   }
