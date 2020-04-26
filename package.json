@@ -1,0 +1,22 @@
+{
+  "name": "svg-center",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc -p .",
+    "build:w": "yarn build -w",
+    "test": "ts-node -P ./tsconfig.json src/test/index.ts",
+    "test:bin": "node dest/bin/index.js -s src/test/svg/*.svg -o src/test/svg/dist"
+  },
+  "dependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/node": "^13.13.2",
+    "commander": "^5.1.0",
+    "glob": "^7.1.6",
+    "svg-path-properties": "^1.0.4",
+    "svgpath": "^2.2.3",
+    "svgson": "https://github.com/MNBuyskih/svgson.git#add-types",
+    "ts-node": "^8.9.0",
+    "typescript": "^3.8.3"
+  },
+  "license": "MIT"
+}

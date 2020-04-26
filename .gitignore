@@ -1,0 +1,8 @@
+/dest/
+/node_modules/
+/yarn-error.log
+/.idea/
+.DS_Store
+
+/src/test/svg/dist/*
+!/src/test/svg/dist/.gitkeep
