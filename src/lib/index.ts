@@ -1,1 +1,0 @@
-export {svgCenter} from "./svgCenter";

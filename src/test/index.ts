@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import {svgCenter} from "../lib";
+import {svgCenter} from "../index";
 
 const svg = fs.readFileSync(path.resolve(__dirname, "svg/Attachments.svg"));
 svgCenter(svg.toString()).then(s => {

@@ -6,10 +6,10 @@
     "outDir": "dest",
     "rootDir": "src",
     "strict": true,
-    "types": ["node", "mocha"],
+    "types": ["node"],
     "esModuleInterop": true,
     "alwaysStrict": false,
     "noImplicitUseStrict": true
   },
-  "files": ["src/lib/index.ts"]
+  "files": ["src/index.ts", "src/bin/index.ts"]
 }
