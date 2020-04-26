@@ -2,11 +2,17 @@
   "name": "svg-tools",
   "version": "1.0.0",
   "scripts": {
-    "svgo": "svgo -f src2/svg --output=dest/svg --disable=removeViewBox --enable=removeAttr:fill",
-    "start": "ts-node -P ./tsconfig.json src2/index.ts"
+    "svgo": "svgo -f src/svg --output=dest/svg --disable=removeViewBox --enable=removeAttr:fill",
+    "start": "ts-node -P ./tsconfig.json src/index.ts"
   },
   "dependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
     "@types/node": "^13.13.2",
+    "@types/sinon": "^9.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "sinon": "^9.0.2",
     "svg-path-properties": "^1.0.4",
     "svgpath": "^2.2.3",
     "svgson": "^4.0.0",
