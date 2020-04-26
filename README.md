@@ -2,7 +2,7 @@
 
 | Before        | After |
 | ------------- |:-------------:|
-| <img src=".github/Attachments.svg" style="border: 1px solid coral" width=48 /> | <img src=".github/AttachmentsFixed.svg" width=48 style="border: 1px solid #229954"/> |
+| <img src=".github/Attachments.svg" width=48 /> | <img src=".github/AttachmentsFixed.svg" width=48 /> |
 
 This is a helpful tool for preparing your SVG icons to use in font generators.
 For generating custom fonts your icons should be placed in the center of square SVG. 
