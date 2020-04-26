@@ -36,7 +36,7 @@ interface PointProperties {
   tangentY: number;
 }
 
-export function pathProperties(d: string): Properties {
+export function getPathProperties(d: string): Properties {
   // @ts-ignore
   return new svgPathProperties(d) as Properties;
 }
