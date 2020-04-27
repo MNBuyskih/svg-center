@@ -2,7 +2,7 @@ name: NPM Package
 
 on:
   release:
-    types: [created]
+    types: [created, edited]
 
 jobs:
   build:
@@ -17,3 +17,5 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
