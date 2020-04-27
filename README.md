@@ -1,4 +1,4 @@
-# SVG Center
+# SVG Icon Center
 
 | Before        | After |
 | ------------- |:-------------:|
@@ -13,13 +13,13 @@ This tool tries to solve this issue of custom icons: wrong sizes and places.
 Add this package to your project
 
 ```bash
-yarn add svg-center # or npm install svg-center
+yarn add svg-icon-center # or npm install svg-icon-center
 ```
 
 You can use it in both: JS and TS languages
 
 ```typescript
-import {svgCenter} from "svg-center";
+import {svgCenter} from "svg-icon-center";
 
 svgCenter("<svg>...</svg>", 36, 36).then(newSvg => console.log(newSvg))
 ```
@@ -34,7 +34,7 @@ There is only one available function: `svgCenter`. Params:
 
 ## CLI
 
-Usage: `svg-center [options]`
+Usage: `svg-icon-center [options]`
 
 Options:
 
@@ -43,16 +43,16 @@ Options:
 - `-w, --width [number]`    output svg width (default: "36")
 - `-h, --height [number]`   output svg height (default: "36")
 
-example: `svg-center -s src/test/svg/*.svg -o src/test/svg/dist -w 24 -h 24`
+Example: `svg-icon-center -s src/test/svg/*.svg -o src/test/svg/dist -w 24 -h 24`
 
-### Limitation
+## Limitation
 
 This is a beta version and currently supports only SVG files,
 that contains only one `path` element.
 
-Please contribute / [let us to know](https://github.com/MNBuyskih/svg-center/issues) 
+Please contribute/[let_us_to_know](https://github.com/MNBuyskih/svg-icon-center/issues) 
 if you find any broken image.
 
-#### License
+## License
 
 MIT
