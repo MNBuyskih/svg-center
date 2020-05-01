@@ -1,6 +1,6 @@
 {
   "name": "svg-icon-center",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "build": "tsc -p .",
     "build:w": "yarn build -w",
@@ -15,7 +15,7 @@
     "glob": "^7.1.6",
     "svg-path-properties": "^1.0.4",
     "svgpath": "^2.2.3",
-    "svgson": "https://github.com/MNBuyskih/svgson.git#add-types"
+    "svgson": "https://github.com/elrumordelaluz/svgson.git#master"
   },
   "devDependencies": {
     "@types/glob": "^7.1.1",
