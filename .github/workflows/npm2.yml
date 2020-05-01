@@ -16,6 +16,6 @@ jobs:
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: yarn publish
+      - run: yarn publish --new-version ${GITHUB_REF#"refs/tags/"} --no-git-tag-version
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
