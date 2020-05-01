@@ -1,4 +1,4 @@
-name: NPM Package
+name: NPM Package 2
 
 on:
   release:
