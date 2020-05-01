@@ -12,12 +12,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: |
-          yarn
-          yarn build
+      - run: yarn
+      - run: yarn publish
         env:
-          CI: true
-      - name: Publish to NPM
-        uses: luvies/action-yarn-publish@v0.1.1
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
