@@ -6,3 +6,5 @@
 
 /src/test/svg/dist/*
 !/src/test/svg/dist/.gitkeep
+
+package-lock.json

@@ -9,6 +9,7 @@
     "prepublish": "yarn build"
   },
   "main": "dest/index.js",
+  "types": "dest/index.d.ts",
   "bin": "dest/bin/index.js",
   "dependencies": {
     "commander": "^5.1.0",
@@ -34,8 +35,7 @@
   ],
   "files": [
     "dest",
-    "README.md",
-    "src"
+    "README.md"
   ],
   "author": {
     "name": "Michael Buyskih",
