@@ -4,6 +4,8 @@
 | ------------- |:-------------:|
 | <img src=".github/Attachments.svg" width=96 /> | <img src=".github/AttachmentsFixed.svg" width=96 /> |
 
+![Publish to NPM](https://github.com/MNBuyskih/svg-center/workflows/Publish%20to%20NPM/badge.svg)
+
 This is a helpful tool for preparing your SVG icons to use in font generators.
 For generating custom fonts your icons should be placed in the center of square SVG. 
 This tool tries to solve this issue of custom icons: wrong sizes and places.
