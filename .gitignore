@@ -4,7 +4,7 @@
 /.idea/
 .DS_Store
 
-/src/test/svg/dist/*
-!/src/test/svg/dist/.gitkeep
+/src/test/dist/*
+!/src/test/dist/.gitkeep
 
 package-lock.json

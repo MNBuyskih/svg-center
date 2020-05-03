@@ -1,11 +1,11 @@
 {
   "name": "svg-icon-center",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scripts": {
     "build": "tsc -p .",
     "build:w": "yarn build -w",
     "test": "ts-node -P ./tsconfig.json src/test/index.ts",
-    "test:bin": "node dest/bin/index.js -s src/test/svg/*.svg -o src/test/svg/dist",
+    "test:bin": "ts-node src/bin/index.ts -s src/test/svg/**/*.svg -o src/test/dist",
     "prepublish": "yarn build"
   },
   "main": "dest/index.js",

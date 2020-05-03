@@ -2,17 +2,34 @@ import svgpath from "svgpath";
 import {INode, parse} from "svgson";
 import {getPathProperties, Properties} from "./getPathProperties";
 
-function createSvg(d: string, width: number, height: number, viewBoxWidth: number, viewBoxHeight: number): string {
-  return `<svg width="${width}" height="${height}" viewBox="0 0 ${viewBoxWidth} ${viewBoxHeight}" xmlns="http://www.w3.org/2000/svg">
+function createSvg(d: string, width: number, height: number): string {
+  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
   <path d="${d}"/>
 </svg>`;
 }
 
-function getOptimizedPath(d: string, translateX: number, translateY: number): string {
+interface IBoundaries {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
+function getOptimizedPath(d: string, pathBoundaries: IBoundaries, svgBoundaries: IBoundaries): string {
+  const sx = svgBoundaries.width / pathBoundaries.width;
+  const sy = svgBoundaries.height / pathBoundaries.height;
+  const scale = Math.min(sx, sy);
+
+  const newWidth = pathBoundaries.width * scale;
+  const newHeight = pathBoundaries.height * scale;
+  const offsetX = (svgBoundaries.width - newWidth) / 2;
+  const offsetY = (svgBoundaries.height - newHeight) / 2;
+
   return svgpath(d)
     .abs()
-    .translate(translateX, translateY)
-    .round(1)
+    .translate(-pathBoundaries.x, -pathBoundaries.y)
+    .scale(scale)
+    .translate(offsetX, offsetY)
     .toString();
 }
 
@@ -43,16 +60,12 @@ function getPathDimensions(path: Properties): { x: number, y: number, width: num
   return {x, y, width, height};
 }
 
-async function getSvgObject(svg: string): Promise<INode> {
-  return parse(svg);
-}
-
 export async function svgCenter(svgContent: string, newSvgWidth: number = 36, newSvgHeight: number = 36): Promise<string> {
-  const svgObject = await getSvgObject(svgContent);
+  const svgObject = await parse(svgContent);
   const d = getD(svgObject);
   const pathData = getPathProperties(d);
-  const {x, y, width: pathWidth, height: pathHeight} = getPathDimensions(pathData);
-  const newPath = getOptimizedPath(d, -x, -y);
+  const {x, y, width, height} = getPathDimensions(pathData);
+  const newPath = getOptimizedPath(d, {x, y, width, height}, {x: 0, y: 0, width: newSvgWidth, height: newSvgHeight});
 
-  return createSvg(newPath, newSvgWidth, newSvgHeight, pathWidth, pathHeight);
+  return createSvg(newPath, newSvgWidth, newSvgHeight);
 }
